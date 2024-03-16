@@ -1,0 +1,109 @@
+original_list = [10, 501, 22, 37, 100, 999, 87, 351]
+
+even_numbers = []
+odd_numbers = []
+
+for num in original_list:
+    if num % 2 == 0: 
+        even_numbers.append(num)
+    else:
+        odd_numbers.append(num)
+
+print("Even numbers:", even_numbers)
+print("Odd numbers:", odd_numbers)
+
+
+qus -02
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+numbers = [10, 501, 22, 37, 100, 999, 87, 351]
+
+prime_count = 0
+prime_list = []
+
+for num in numbers:
+    if is_prime(num):
+        prime_count += 1
+        prime_list.append(num)
+
+print("Prime numbers in the list:", prime_count)
+print("Prime numbers:", prime_list)
+
+qus-03
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+numbers = [10, 501, 22, 37, 100, 999, 87, 351]
+
+prime_count = 0
+prime_list = []
+
+for num in numbers:
+    if is_prime(num):
+        prime_count += 1
+        prime_list.append(num)
+
+print("Prime numbers in the list:", prime_count)
+print("Prime numbers:", prime_list)
+
+qus -04
+def sum_of_first_and_last_digit(number):
+    num_str = str(number)
+        if num_str.isdigit():
+        first_digit = int(num_str[0])
+        last_digit = int(num_str[-1])
+        
+        return first_digit + last_digit
+    else:
+        return "Invalid input. Please enter a valid integer."
+
+try:
+    num = int(input("Enter an integer: "))
+    result = sum_of_first_and_last_digit(num)
+    print("Sum of the first and last digit:", result)
+except ValueError:
+    print("Invalid input. Please enter a valid integer.")
+
+
+qus -05
+def find_triplet_with_sum(lst, target_sum):
+    n = len(lst)
+    for i in range(n - 2):
+        for j in range(i + 1, n - 1):
+            for k in range(j + 1, n):
+                if lst[i] + lst[j] + lst[k] == target_sum:
+                    return [lst[i], lst[j], lst[k]]
+    return None
+
+lst = [10, 20, 30, 9]
+target_sum = 59
+
+result = find_triplet_with_sum(lst, target_sum)
+
+if result:
+    print("Triplet with sum {} found: {}".format(target_sum, result))
+else:
+    print("No triplet found with sum {}.".format(target_sum))
